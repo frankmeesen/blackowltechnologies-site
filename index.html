@@ -865,6 +865,7 @@
     <button class="cta-btn" onclick="handleSubmit()">Get a Quote →</button>
   </div>
   <div class="cta-detail" id="form-msg">No commitment required. We'll reach out to discuss your needs.</div>
+  <div id="form-success" style="display:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;margin-top:1rem;">✓ Message sent — we will be in touch within one business day.</div>
 
   <div class="cta-contact-row">
     <div class="contact-item">
@@ -888,7 +889,7 @@
   <div class="footer-be">Belgium · EU Certified</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function handleSubmit() {
     const email = document.getElementById('email-input').value;
     const msg = document.getElementById('form-msg');
@@ -897,9 +898,25 @@
       msg.textContent = 'Please enter a valid email address.';
       return;
     }
-    msg.style.color = '#EF9F27';
-    msg.textContent = 'Thank you — we\'ll be in touch within one business day.';
-    document.getElementById('email-input').value = '';
+    msg.textContent = '';
+    fetch('https://formspree.io/f/xwvwlqva', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(res => {
+      if (res.ok) {
+        document.getElementById('email-input').value = '';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        msg.style.color = '#E24B4A';
+        msg.textContent = 'Something went wrong. Please email us directly.';
+      }
+    })
+    .catch(() => {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Something went wrong. Please email us directly.';
+    });
   }
 
   
