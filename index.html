@@ -617,13 +617,9 @@
   }
 
   .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   @media (max-width: 768px) {
@@ -873,7 +869,7 @@
   <div class="cta-contact-row">
     <div class="contact-item">
       <p>Email</p>
-      <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="046d6a626b44666865676f6b73687061676c6a6b686b636d61772a676b69">[email&#160;protected]</a></span>
+      <span id="contact-email" style="cursor:pointer;"></span>
     </div>
     <div class="contact-item">
       <p>Phone</p>
@@ -919,6 +915,14 @@
       if (rect.top < window.innerHeight) el.classList.add('visible');
     });
   }, 100);
+
+  // Email reveal - visible to humans, hidden from bots
+  const u = 'info';
+  const d = 'blackowltechnologies.com';
+  const emailEl = document.getElementById('contact-email');
+  if (emailEl) {
+    emailEl.innerHTML = '<a href="mailto:' + u + '@' + d + '" style="color:var(--white);text-decoration:none;">' + u + '@' + d + '</a>';
+  }
 </script>
 </body>
 </html>
