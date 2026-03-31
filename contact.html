@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote — Black Owl Technologies</title>
+  <meta name="description" content="Request a quote for drone inspections, thermal imaging, 3D mapping or aerial photography across Belgium. EASA certified. Response within 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0a0a;
+      --black-2: #111111;
+      --black-3: #1a1a1a;
+      --amber:        #EF9F27;
+      --amber-light:  #FAC775;
+      --amber-dark:   #BA7517;
+      --white:   #f5f0e8;
+      --muted:   #888880;
+      --border:  rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-img { height: 40px; width: 40px; object-fit: contain; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: #ffffff; }
+    .logo-owl { color: var(--amber); }
+    .logo-tech { color: #ffffff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: var(--amber); color: var(--black); padding: 8px 20px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--amber-light); }
+
+    /* HERO */
+    .hero {
+      min-height: 54vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 120px 80px 64px;
+      background: var(--black-2); position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(239,159,39,0.07) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 18px; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.02; color: var(--white); }
+    .hero-title .accent { color: var(--amber); }
+    .hero-sub { font-size: 1.08rem; color: var(--muted); max-width: 580px; margin-top: 20px; line-height: 1.75; }
+    .urgent-bar {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 28px;
+      background: var(--black-3); border: 1px solid var(--amber-dark);
+      padding: 12px 20px;
+      font-size: 0.92rem; color: var(--white);
+    }
+    .urgent-bar .bolt { color: var(--amber); font-size: 1rem; }
+    .urgent-bar a { color: var(--amber); text-decoration: none; font-weight: 600; }
+    .urgent-bar a:hover { text-decoration: underline; }
+
+    /* TWO-COLUMN LAYOUT */
+    .page-body {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 0;
+      align-items: start;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 80px;
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar { position: sticky; top: 88px; padding-right: 64px; }
+
+    .sidebar-block { margin-bottom: 48px; }
+    .block-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+    /* Why contact us */
+    .trust-list { display: flex; flex-direction: column; gap: 10px; }
+    .trust-item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+    .trust-check { color: var(--amber); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+
+    /* Typical requests */
+    .request-list { display: flex; flex-direction: column; gap: 8px; }
+    .request-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--muted); line-height: 1.5; }
+    .request-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); margin-top: 8px; flex-shrink: 0; }
+
+    /* Contact details table */
+    .details-table { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .detail-row { display: flex; align-items: flex-start; gap: 0; background: var(--black-2); }
+    .detail-key { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 14px 16px; width: 110px; flex-shrink: 0; border-right: 1px solid var(--border); }
+    .detail-val { font-size: 0.92rem; color: var(--white); padding: 14px 16px; }
+    .detail-val a { color: var(--amber); text-decoration: none; }
+    .detail-val a:hover { text-decoration: underline; }
+
+    /* RIGHT — FORM */
+    .form-col { border-left: 1px solid var(--border); padding-left: 64px; }
+    .form-header { margin-bottom: 36px; }
+    .form-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--white); margin-bottom: 10px; }
+    .form-subtitle { font-size: 0.95rem; color: var(--muted); }
+
+    form { display: flex; flex-direction: column; gap: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--black-2); border: 1px solid var(--border);
+      color: var(--white); font-family: 'Barlow', sans-serif; font-size: 0.97rem;
+      padding: 13px 16px; outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--amber); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #4a4a44; font-size: 0.88rem; }
+    .form-group select option { background: var(--black-2); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .select-wrap { position: relative; }
+    .select-wrap::after { content: '↓'; position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--amber); pointer-events: none; font-size: 0.82rem; }
+    .select-wrap select { width: 100%; padding-right: 38px; cursor: pointer; }
+
+    .privacy-note {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--muted);
+      background: var(--black-2); border: 1px solid var(--border);
+      padding: 14px 16px;
+    }
+    .privacy-note .lock { color: var(--amber); flex-shrink: 0; }
+
+    .form-submit {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--amber); color: var(--black);
+      border: none; padding: 17px 48px;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--amber-light); transform: translateY(-2px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    #form-msg { font-size: 0.88rem; color: #E24B4A; }
+    #form-success {
+      display: none;
+      background: var(--black-2); border: 1px solid var(--amber-dark);
+      padding: 28px 32px;
+    }
+    #form-success .success-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--amber); margin-bottom: 8px; }
+    #form-success p { font-size: 0.97rem; color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black-2); border-top: 1px solid var(--border);
+      padding: 48px 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.06em; }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .page-body { grid-template-columns: 1fr; padding: 64px 40px; }
+      .sidebar { position: static; padding-right: 0; margin-bottom: 56px; }
+      .form-col { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 56px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 24px 48px; }
+      .page-body { padding: 48px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="black_owl_logo_1x1.png" alt="Black Owl Technologies" class="logo-img" />
+    <span class="logo-text">Black <span class="logo-owl">Owl</span> <span class="logo-tech">Technologies</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#sectors">Sectors</a></li>
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Get a Quote</div>
+  <h1 class="hero-title">Let's Talk —<br /><span class="accent">Drone Inspections</span><br />&amp; Aerial Intelligence</h1>
+  <p class="hero-sub">Tell us about your project. We'll assess feasibility, risks, and pricing — and get back to you within one business day.</p>
+  <div class="urgent-bar">
+    <span class="bolt">⚡</span>
+    Urgent inspection? <a href="tel:+32472511598">Call us directly</a> for fastest availability.
+  </div>
+</section>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-block">
+      <div class="block-label">Why Contact Us</div>
+      <ul class="trust-list">
+        <li class="trust-item"><span class="trust-check">✔</span> EASA Certified Drone Operator</li>
+        <li class="trust-item"><span class="trust-check">✔</span> Nationwide Coverage — Belgium</li>
+        <li class="trust-item"><span class="trust-check">✔</span> Fast Turnaround (≤ 24h response)</li>
+        <li class="trust-item"><span class="trust-check">✔</span> Industrial &amp; Commercial Expertise</li>
+        <li class="trust-item"><span class="trust-check">✔</span> Safe access to complex or hazardous areas</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="block-label">Typical Requests We Handle</div>
+      <ul class="request-list">
+        <li class="request-item"><span class="request-dot"></span>Thermal inspections — heat loss, moisture, solar panels</li>
+        <li class="request-item"><span class="request-dot"></span>Roof &amp; building inspections</li>
+        <li class="request-item"><span class="request-dot"></span>Construction site monitoring &amp; 3D mapping</li>
+        <li class="request-item"><span class="request-dot"></span>Infrastructure &amp; hard-to-access asset inspections</li>
+        <li class="request-item"><span class="request-dot"></span>Forestry &amp; land monitoring</li>
+        <li class="request-item"><span class="request-dot"></span>Aerial photography &amp; video documentation</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="block-label">Contact Details</div>
+      <div class="details-table">
+        <div class="detail-row">
+          <div class="detail-key">Email</div>
+          <div class="detail-val"><a href="mailto:info@blackowltechnologies.com">info@blackowltechnologies.com</a></div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-key">Phone</div>
+          <div class="detail-val"><a href="tel:+32472511598">+32 472 51 15 98</a></div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-key">Coverage</div>
+          <div class="detail-val">Belgium — nationwide</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-key">Hours</div>
+          <div class="detail-val">Mon – Fri, 08:00 – 18:00</div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- RIGHT: FORM -->
+  <div class="form-col">
+    <div class="form-header">
+      <div class="form-title">Request Your Quote</div>
+      <p class="form-subtitle">Fill in the form below — we'll get back to you within 24 hours.</p>
+    </div>
+
+    <form id="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" placeholder="e.g. John Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="e.g. john@company.com" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number <span style="font-size:0.75rem;color:#555">(optional but recommended)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. +32 ..." />
+        </div>
+        <div class="form-group">
+          <label for="service">Service of Interest</label>
+          <div class="select-wrap">
+            <select id="service" name="service">
+              <option value="" disabled selected>Select a service…</option>
+              <option value="Thermal Inspections">Thermal Inspections</option>
+              <option value="Drone Inspections">Drone Inspections</option>
+              <option value="3D Mapping">3D Mapping &amp; Surveying</option>
+              <option value="Aerial Photography">Aerial Photography</option>
+              <option value="Forestry & Land Monitoring">Forestry &amp; Land Monitoring</option>
+              <option value="Not sure">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message *</label>
+        <textarea id="message" name="message" placeholder="e.g. Thermal inspection for warehouse roof ~5000m² in Liège / Solar panel check / Construction site mapping…" required></textarea>
+      </div>
+
+      <div class="privacy-note">
+        <span class="lock">🔒</span>
+        Your information is kept confidential and used only to respond to your request.
+      </div>
+
+      <div id="form-msg"></div>
+
+      <button type="submit" class="form-submit">Request My Quote →</button>
+
+      <div id="form-success">
+        <div class="success-title">Message Received.</div>
+        <p>We'll review your request and get back to you within one business day. For urgent matters, call us at <a href="tel:+32472511598" style="color:var(--amber)">+32 472 51 15 98</a>.</p>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Black <span>Owl</span> Technologies</div>
+  <div class="footer-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#sectors">Sectors</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Black Owl Technologies. EASA Certified. Belgium.</div>
+</footer>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const msg = document.getElementById('form-msg');
+    const btn = document.querySelector('.form-submit');
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Please fill in all required fields.';
+      return;
+    }
+    if (!email.includes('@')) {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    msg.textContent = '';
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xwvwlqva', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name:    name,
+        email:   email,
+        phone:   document.getElementById('phone').value.trim(),
+        service: document.getElementById('service').value,
+        message: message
+      })
+    })
+    .then(res => {
+      if (res.ok) {
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        msg.style.color = '#E24B4A';
+        msg.textContent = 'Something went wrong. Please email us directly at info@blackowltechnologies.com';
+        btn.textContent = 'Request My Quote →';
+        btn.disabled = false;
+      }
+    })
+    .catch(() => {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Something went wrong. Please email us directly at info@blackowltechnologies.com';
+      btn.textContent = 'Request My Quote →';
+      btn.disabled = false;
+    });
+  });
+</script>
+
+</body>
+</html>
