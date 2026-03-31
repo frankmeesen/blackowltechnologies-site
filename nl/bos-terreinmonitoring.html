@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bos- en Terreinmonitoring — Black Owl Technologies</title>
+  <meta name="description" content="Uitgebreide luchtbewaking van bossen, landbouwgrond en natuurlijk terrein. Detecteer vegetatiestress, volg landveranderingen en genereer nauwkeurige dekkingskaarten voor weloverwogen landbeheer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --black-2: #111111; --black-3: #1a1a1a;
+      --amber: #EF9F27; --amber-light: #FAC775; --amber-dark: #BA7517;
+      --white: #f5f0e8; --muted: #888880; --border: rgba(255,255,255,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; line-height: 1.6; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-img { height: 40px; width: 40px; object-fit: contain; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: #ffffff; }
+    .logo-owl { color: var(--amber); }
+    .logo-tech { color: #ffffff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: var(--amber); color: var(--black); padding: 8px 20px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--amber-light); }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px 80px 80px; background: var(--black-2); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(239,159,39,0.06) 0%, transparent 60%); pointer-events: none; }
+    .hero-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 20px; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 8vw, 7rem); line-height: 1; color: var(--white); margin-bottom: 28px; }
+    .hero-title .accent { color: var(--amber); }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin-bottom: 40px; }
+    .hero-cta { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--amber); color: var(--black); padding: 14px 36px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .hero-cta:hover { background: var(--amber-light); transform: translateY(-2px); }
+    section { padding: 96px 80px; }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--white); margin-bottom: 24px; line-height: 1.05; }
+    .section-body { font-size: 1.05rem; color: var(--muted); max-width: 720px; line-height: 1.8; }
+    .overview { background: var(--black); }
+    .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .overview-text p { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .stat-block { background: var(--black-2); padding: 32px 28px; }
+    .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--amber); line-height: 1; }
+    .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; color: var(--muted); margin-top: 6px; text-transform: uppercase; }
+    .use-cases { background: var(--black-2); }
+    .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 48px; }
+    .case-card { background: var(--black-3); padding: 36px 32px; transition: background 0.2s; }
+    .case-card:hover { background: #212121; }
+    .case-number { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.14em; color: var(--amber); text-transform: uppercase; margin-bottom: 14px; }
+    .case-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--white); margin-bottom: 12px; }
+    .case-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+    .how { background: var(--black); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 56px; }
+    .step { padding-top: 24px; border-top: 2px solid var(--amber); }
+    .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--amber); opacity: 0.25; line-height: 1; margin-bottom: 8px; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+    .step-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+    .deliverables { background: var(--black-2); }
+    .del-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .del-pill { font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--black-3); border: 1px solid var(--border); padding: 10px 20px; }
+    .sectors { background: var(--black); }
+    .sector-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+    .sector-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); border: 1px solid var(--amber-dark); padding: 8px 18px; }
+    .cta-section { background: var(--amber); padding: 96px 80px; display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+    .cta-section .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); color: var(--black); line-height: 1; }
+    .cta-section .cta-sub { font-size: 1.05rem; color: rgba(10,10,10,0.7); max-width: 560px; }
+    .cta-section .cta-btn { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--black); color: var(--white); padding: 14px 36px; text-decoration: none; transition: background 0.2s; }
+    .cta-section .cta-btn:hover { background: var(--black-3); }
+    footer { background: var(--black-2); border-top: 1px solid var(--border); padding: 48px 80px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.06em; }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; } .nav-links { display: none; }
+      .hero, section { padding-left: 24px; padding-right: 24px; }
+      .overview-grid { grid-template-columns: 1fr; gap: 48px; }
+      .cta-section { padding: 64px 24px; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="black_owl_logo_1x1.png" alt="Black Owl Technologies" class="logo-img" />
+    <span class="logo-text">Black <span class="logo-owl">Owl</span> <span class="logo-tech">Technologies</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#services" class="active">Diensten</a></li>
+    <li><a href="../index.html#sectors">Sectoren</a></li>
+    <li><a href="../index.html#why">Waarom wij</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Opname aanvragen</a>
+</nav>
+<section class="hero">
+  <div class="hero-tag">05 — Omgeving</div>
+  <h1 class="hero-title">Bos- en<br /><span class="accent">Terreinmonitoring</span></h1>
+  <p class="hero-sub">Uitgebreide luchtbewaking van bossen, landbouwgrond en natuurlijk terrein. Detecteer vegetatiestress, volg landveranderingen en genereer nauwkeurige dekkingskaarten voor weloverwogen landbeheer.</p>
+  <a href="../index.html#contact" class="hero-cta">Opname aanvragen</a>
+</section>
+<section class="overview">
+  <div class="overview-grid">
+    <div class="overview-text">
+      <div class="section-label">Wat we doen</div>
+      <h2 class="section-title">Begrijp uw land van bovenaf</h2>
+      <p>Het beheer van bossen, landbouwgrond en natuurreservaten vereist actuele, ruimtelijk nauwkeurige data. Traditionele veldopnames zijn traag, duur en dekken grote gebieden zelden volledig. Onze luchtbewakingsdienst levert het volledige beeld — snel en betaalbaar.</p>
+      <p>Met multispectrale en hoge-resolutie RGB-sensoren detecteren en karteren we vegetatiegezondheid, soortenverspreiding, ziekten en stress, landgebruiksveranderingen en terreinkenmerken over gebieden die veldteams weken zouden kosten te beloopen.</p>
+      <p>Data wordt georeferentieerd, verwerkt in GIS-compatibele formaten en geleverd met analyserapporten waarop uw ecologen, agronomen en landbeheerders direct kunnen handelen.</p>
+    </div>
+    <div><div class="stat-grid">
+        <div class="stat-block">
+          <div class="stat-number">200ha+</div>
+          <div class="stat-label">Gedekt per missiedag</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">5-bands</div>
+          <div class="stat-label">Multispectrale beeldvorming beschikbaar</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">NDVI</div>
+          <div class="stat-label">Vegetatiestressdetectie</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">48u</div>
+          <div class="stat-label">Dataleveringstijd</div>
+        </div>
+    </div></div>
+  </div>
+</section>
+<section class="use-cases">
+  <div class="section-label">Toepassingen</div>
+  <h2 class="section-title">Wat we bewaken en karteren</h2>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-number">01</div>
+      <div class="case-title">Bosgezondheidsbeoor-deling</div>
+      <p class="case-desc">Detecteer vroegtijdig ziekten, plaagschade, droogtestress en invasieve soorten in grote bosgebieden met multispectrale en RGB-luchtopnames — voordat schade onomkeerbaar wordt.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-number">02</div>
+      <div class="case-title">Vegetatie- & landbedekkingskartering</div>
+      <p class="case-desc">Classificeer en karteer vegetatietypen, landgebruikscategorieën en habitatgrenzen met hoge ruimtelijke nauwkeurigheid. Essentieel voor natuurbehoudplanning en milieueffectrapportages.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-number">03</div>
+      <div class="case-title">Landbouwgewasmonitoring</div>
+      <p class="case-desc">Genereer NDVI- en multispectrale kaarten om gewassstress, nutriënttekorten, irrigatieproblemen en opbrengstwisseling te identificeren — gerichte interventies mogelijk makend.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-number">04</div>
+      <div class="case-title">Landveranderingsmonitoring</div>
+      <p class="case-desc">Volg landgebruiksveranderingen, inbreuk, erosie en vegetatieverlies in de tijd via herhaalde luchtopnames — elk dataset uitgelijnd op hetzelfde coördinatensysteem.</p>
+    </div>
+  </div>
+</section>
+<section class="how">
+  <div class="section-label">Proces</div>
+  <h2 class="section-title">Van vlucht tot landinzicht</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Bereik & sensorenselectie</div>
+      <p class="step-desc">We beoordelen uw landgebied, bewakingsdoelen en uitvoervereisten. De juiste sensorcombinatie (RGB, multispectaal, thermisch) wordt geselecteerd en vliegplannen voorbereid.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Luchtopnamemissie</div>
+      <p class="step-desc">Onze drone dekt het volledige opnamegebied systematisch af op consistente hoogte, waarbij overlappende beeldvorming in alle vereiste spectraalbanden wordt vastgelegd.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Dataverwerking & analyse</div>
+      <p class="step-desc">Vastgelegde beelden worden verwerkt tot orthofotomozaïeken, NDVI en andere vegetatie-indices, geclassificeerde landbedekkingskaarten en veranderingsdetectielagen.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Rapport & datalevering</div>
+      <p class="step-desc">Alle outputs worden geleverd in GIS-compatibele formaten (GeoTIFF, SHP, KMZ) met een samenvattingsrapport dat belangrijkste bevindingen, stresszones en aanbevolen beheeracties belicht — binnen 48 uur.</p>
+    </div>
+  </div>
+</section>
+<section class="deliverables">
+  <div class="section-label">Wat u ontvangt</div>
+  <h2 class="section-title">Deliverables</h2>
+  <p class="section-body">Elke landbewakinsgopname omvat een compleet geospatiaal datapakket en analyseoverzicht klaar voor uw GIS-platform of landbeheerteam.</p>
+  <div class="del-list">
+    <span class="del-pill">RGB-orthofotomozaïek</span>
+    <span class="del-pill">Multispectrale beeldvorming (NDVI / NDRE)</span>
+    <span class="del-pill">Vegetatiestresskaart</span>
+    <span class="del-pill">Landbedekkingsclassificatie</span>
+    <span class="del-pill">Veranderingsdetectielaag</span>
+    <span class="del-pill">GIS-compatibele outputs (GeoTIFF / SHP)</span>
+    <span class="del-pill">Analytisch samenvattingsrapport</span>
+    <span class="del-pill">EASA-conformiteitsdocumentatie</span>
+  </div>
+</section>
+<section class="sectors">
+  <div class="section-label">Sectoren</div>
+  <h2 class="section-title">Met wie we werken</h2>
+  <div class="sector-tags">
+    <span class="sector-tag">Bosbouw & Hout</span>
+    <span class="sector-tag">Landbouw & Tuinbouw</span>
+    <span class="sector-tag">Natuurbehoud</span>
+    <span class="sector-tag">Milieuadvies</span>
+    <span class="sector-tag">Overheid & Gemeenten</span>
+    <span class="sector-tag">Grondontwikkeling</span>
+    <span class="sector-tag">Onderzoek & Academie</span>
+    <span class="sector-tag">Verzekeringen & Risico</span>
+  </div>
+</section>
+<div class="cta-section">
+  <div class="cta-title">Ken uw land.<br />Beheer het beter.</div>
+  <p class="cta-sub">Vertel ons over uw landgebied en bewakingsdoelen en we stellen de juiste aanpak voor — dekking, sensoren, outputs en prijs — binnen één werkdag.</p>
+  <a href="../index.html#contact" class="cta-btn">Landopname aanvragen</a>
+</div>
+<footer>
+  <div class="footer-logo">Black <span>Owl</span> Technologies</div>
+  <div class="footer-links">
+    <a href="../index.html#services">Diensten</a>
+    <a href="../index.html#sectors">Sectoren</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Black Owl Technologies. EASA Gecertificeerd. België.</div>
+</footer>
+</body>
+</html>
