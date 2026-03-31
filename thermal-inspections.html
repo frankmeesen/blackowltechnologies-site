@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermal Inspections — Black Owl Technologies</title>
+  <meta name="description" content="Drone thermal inspections for flat roofs, solar panels, electrical cabinets and industrial facades across Belgium. EASA certified. Fast turnaround." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0a0a;
+      --black-2: #111111;
+      --black-3: #1a1a1a;
+      --amber:        #EF9F27;
+      --amber-light:  #FAC775;
+      --amber-dark:   #BA7517;
+      --white:   #f5f0e8;
+      --muted:   #888880;
+      --border:  rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-img { height: 40px; width: 40px; object-fit: contain; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); }
+    .logo-text em { color: var(--amber); font-style: normal; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: var(--amber); color: var(--black); padding: 8px 20px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--amber-light); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 120px 80px 80px;
+      background: var(--black-2);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(239,159,39,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 20px; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 8vw, 7rem); line-height: 1; color: var(--white); margin-bottom: 28px; }
+    .hero-title .accent { color: var(--amber); }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin-bottom: 40px; }
+    .hero-cta { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--amber); color: var(--black); padding: 14px 36px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .hero-cta:hover { background: var(--amber-light); transform: translateY(-2px); }
+
+    /* SECTION GENERIC */
+    section { padding: 96px 80px; }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--white); margin-bottom: 24px; line-height: 1.05; }
+    .section-body { font-size: 1.05rem; color: var(--muted); max-width: 720px; line-height: 1.8; }
+
+    /* OVERVIEW */
+    .overview { background: var(--black); }
+    .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .overview-text p { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .stat-block { background: var(--black-2); padding: 32px 28px; }
+    .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--amber); line-height: 1; }
+    .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; color: var(--muted); margin-top: 6px; text-transform: uppercase; }
+
+    /* USE CASES */
+    .use-cases { background: var(--black-2); }
+    .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; background: var(--border); border: 1px solid var(--border); margin-top: 48px; }
+    .case-card { background: var(--black-3); padding: 36px 32px; transition: background 0.2s; }
+    .case-card:hover { background: #212121; }
+    .case-number { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.14em; color: var(--amber); text-transform: uppercase; margin-bottom: 14px; }
+    .case-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--white); margin-bottom: 12px; }
+    .case-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+    /* HOW IT WORKS */
+    .how { background: var(--black); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 56px; counter-reset: step-counter; }
+    .step { position: relative; padding-top: 24px; border-top: 2px solid var(--amber); }
+    .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--amber); opacity: 0.25; line-height: 1; margin-bottom: 8px; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+    .step-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+
+    /* DELIVERABLES */
+    .deliverables { background: var(--black-2); }
+    .del-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .del-pill {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--white); background: var(--black-3);
+      border: 1px solid var(--border); padding: 10px 20px;
+    }
+
+    /* SECTORS */
+    .sectors { background: var(--black); }
+    .sector-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+    .sector-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); border: 1px solid var(--amber-dark); padding: 8px 18px; }
+
+    /* CTA */
+    .cta-section {
+      background: var(--amber); padding: 96px 80px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 32px;
+    }
+    .cta-section .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); color: var(--black); line-height: 1; }
+    .cta-section .cta-sub { font-size: 1.05rem; color: rgba(10,10,10,0.7); max-width: 560px; }
+    .cta-section .cta-btn { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--black); color: var(--white); padding: 14px 36px; text-decoration: none; transition: background 0.2s; }
+    .cta-section .cta-btn:hover { background: var(--black-3); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black-2); border-top: 1px solid var(--border);
+      padding: 48px 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.06em; }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero, section { padding-left: 24px; padding-right: 24px; }
+      .overview-grid { grid-template-columns: 1fr; gap: 48px; }
+      .cta-section { padding: 64px 24px; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="logo"><img src="black_owl_logo_1x1.png" alt="Black Owl Technologies" class="logo-img" /><span class="logo-text">Black <em>Owl</em> Technologies</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#services" class="active">Services</a></li>
+    <li><a href="../index.html#sectors">Sectors</a></li>
+    <li><a href="../index.html#why">Why Us</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">01 — Thermal Imaging</div>
+  <h1 class="hero-title">Thermal<br /><span class="accent">Inspections</span></h1>
+  <p class="hero-sub">Detect heat loss, moisture intrusion, electrical hotspots and solar panel faults — invisible to the naked eye, revealed in minutes from the air.</p>
+  <a href="../index.html#contact" class="hero-cta">Request an Inspection</a>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="overview-grid">
+    <div class="overview-text">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">See What Others Miss</h2>
+      <p>Our radiometric thermal drone inspections capture precise temperature data across your entire asset — roof, facade, solar array or electrical installation — in a single flight. No scaffolding. No downtime. No guesswork.</p>
+      <p>We use professional-grade FLIR radiometric cameras paired with RTK-enabled drones to deliver legally compliant, centimetre-accurate thermal data — not blurry IR footage. Every anomaly is geotagged, annotated and delivered in a structured report your maintenance team can act on immediately.</p>
+      <p>All missions are carried out by EASA-certified pilots operating in accordance with Belgian and EU drone regulations.</p>
+    </div>
+    <div>
+      <div class="stat-grid">
+        <div class="stat-block">
+          <div class="stat-number">70%</div>
+          <div class="stat-label">Cost saving vs traditional inspection</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">4K+</div>
+          <div class="stat-label">Radiometric thermal resolution</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Operational downtime required</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">48h</div>
+          <div class="stat-label">Typical report turnaround</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="use-cases">
+  <div class="section-label">Applications</div>
+  <h2 class="section-title">Where Thermal Imaging Pays Off</h2>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-number">01</div>
+      <div class="case-title">Flat Roofs</div>
+      <p class="case-desc">Identify moisture trapped beneath waterproofing membranes before it causes structural damage. Avoid costly core sampling and cover the entire roof surface in one pass.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-number">02</div>
+      <div class="case-title">Solar Panels</div>
+      <p class="case-desc">Detect hotspots, bypass diode failures, delamination and soiling across large arrays. Maximise energy output and prevent fire risk without shutting down production.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-number">03</div>
+      <div class="case-title">Electrical Cabinets & Infrastructure</div>
+      <p class="case-desc">Spot overheating cables, loose connections and failing components before they trip circuits or cause outages. Ideal for substations, distribution panels and transformer yards.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-number">04</div>
+      <div class="case-title">Industrial Facades</div>
+      <p class="case-desc">Assess insulation performance, detect air infiltration and locate structural anomalies across large building envelopes — in a fraction of the time of manual surveys.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-label">Process</div>
+  <h2 class="section-title">How a Thermal Mission Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Brief & Planning</div>
+      <p class="step-desc">We assess your site, agree on the inspection scope, check weather conditions (thermal works best in low sun, stable temperatures) and file all required flight authorisations.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">On-Site Mission</div>
+      <p class="step-desc">Our pilot executes a systematic flight pattern, capturing overlapping radiometric thermal frames across the entire target area. Most inspections take 1–3 hours on site.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Data Analysis</div>
+      <p class="step-desc">Raw thermal data is processed using calibrated software. Anomalies are identified, classified by severity and cross-referenced with visible-light imagery for context.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Report Delivery</div>
+      <p class="step-desc">You receive a structured PDF report with geotagged findings, severity ratings, annotated thermal images and recommended corrective actions — within 48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="deliverables">
+  <div class="section-label">What You Receive</div>
+  <h2 class="section-title">Deliverables</h2>
+  <p class="section-body">Every thermal inspection includes a full data package ready to hand to your maintenance team, insurer or building manager.</p>
+  <div class="del-list">
+    <span class="del-pill">Radiometric Thermal Image Set</span>
+    <span class="del-pill">Annotated PDF Report</span>
+    <span class="del-pill">Geotagged Anomaly Map</span>
+    <span class="del-pill">Severity Classification</span>
+    <span class="del-pill">Visible-Light Reference Photos</span>
+    <span class="del-pill">Corrective Action Recommendations</span>
+    <span class="del-pill">EASA Compliance Documentation</span>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors">
+  <div class="section-label">Industries Served</div>
+  <h2 class="section-title">Who We Work With</h2>
+  <div class="sector-tags">
+    <span class="sector-tag">Construction</span>
+    <span class="sector-tag">Energy & Utilities</span>
+    <span class="sector-tag">Real Estate</span>
+    <span class="sector-tag">Industry & Manufacturing</span>
+    <span class="sector-tag">Infrastructure</span>
+    <span class="sector-tag">Insurance</span>
+    <span class="sector-tag">Property Management</span>
+    <span class="sector-tag">Agriculture</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-title">Ready to See<br />the Invisible?</div>
+  <p class="cta-sub">Tell us about your site and we'll get back to you within one business day with availability, scope and pricing.</p>
+  <a href="../index.html#contact" class="cta-btn">Request a Thermal Inspection</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Black <span>Owl</span> Technologies</div>
+  <div class="footer-links">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#sectors">Sectors</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Black Owl Technologies. EASA Certified. Belgium.</div>
+</footer>
+
+</body>
+</html>
