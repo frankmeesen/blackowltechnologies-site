@@ -921,6 +921,20 @@
       </div>
       <div class="service-arrow">↗</div>
     </a>
+
+    <a class="service-card" href="/fr/services/mission-sur-mesure.html">
+      <div class="service-icon-line"></div>
+      <div class="service-tag">06 — Sur Mesure</div>
+      <div class="service-name">Mission sur Mesure</div>
+      <p class="service-desc">Vous ne trouvez pas ce qu'il vous faut ? Nous concevons des missions drone sur mesure pour chaque secteur ou cas d'usage en Belgique.</p>
+      <div class="service-uses">
+        <span class="use-pill">Tout Secteur</span>
+        <span class="use-pill">Multi-Capteurs</span>
+        <span class="use-pill">Recherche</span>
+        <span class="use-pill">Événements</span>
+      </div>
+      <div class="service-arrow">↗</div>
+    </a>
   </div>
 </section>
 
@@ -1010,6 +1024,166 @@
       <div class="sector-services">Santé Forestière · Suivi des Terrains · Conservation · Analyse Agronomique</div>
     </div>
   </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Intervenez-vous dans toutes les régions de Belgique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui — nous opérons dans toute la Belgique, y compris en Flandre, en Wallonie et en Région de Bruxelles-Capitale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Êtes-vous certifié EASA pour les vols commerciaux en Belgique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui — Black Owl Technologies détient un certificat EASA A2 et une autorisation STS, en conformité totale avec la réglementation européenne sur les drones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels secteurs servez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous travaillons avec des clients dans la construction, l'immobilier, l'énergie, les services publics, les infrastructures, la sylviculture et l'agriculture en Belgique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dans quel délai livrez-vous les résultats après une inspection ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La plupart des rapports et livrables sont remis dans les 48 heures suivant la mission de vol."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Travaillez-vous en néerlandais, français et anglais ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui — nous opérons dans les trois langues et servons des clients dans les deux régions linguistiques de Belgique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pouvez-vous concevoir une mission qui ne figure pas dans vos services ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolument — nous concevons des missions drone entièrement personnalisées pour chaque secteur, site ou cas d'usage. Contactez-nous pour discuter de vos besoins spécifiques."
+      }
+    }
+    ]
+  }
+  </script>
+  <style>
+    .faq-section { background: var(--black-2); padding: 96px 80px; }
+    .faq-list { margin-top: 48px; border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 0; gap: 24px; text-align: left;
+    }
+    .faq-question span:first-child {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem;
+      font-weight: 600; letter-spacing: 0.03em; color: var(--white);
+      transition: color 0.2s;
+    }
+    .faq-question:hover span:first-child { color: var(--amber); }
+    .faq-icon {
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem;
+      color: var(--amber); flex-shrink: 0; transition: transform 0.25s;
+    }
+    .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+    .faq-answer.open { max-height: 300px; padding-bottom: 24px; }
+    .faq-answer p { font-size: 1rem; color: var(--muted); line-height: 1.8; max-width: 760px; }
+    @media (max-width: 900px) { .faq-section { padding: 64px 24px; } }
+  </style>
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Questions Fréquentes</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        <span>Intervenez-vous dans toutes les régions de Belgique ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui — nous opérons dans toute la Belgique, y compris en Flandre, en Wallonie et en Région de Bruxelles-Capitale.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        <span>Êtes-vous certifié EASA pour les vols commerciaux en Belgique ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui — Black Owl Technologies détient un certificat EASA A2 et une autorisation STS, en conformité totale avec la réglementation européenne sur les drones.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        <span>Quels secteurs servez-vous ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Nous travaillons avec des clients dans la construction, l'immobilier, l'énergie, les services publics, les infrastructures, la sylviculture et l'agriculture en Belgique.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        <span>Dans quel délai livrez-vous les résultats après une inspection ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>La plupart des rapports et livrables sont remis dans les 48 heures suivant la mission de vol.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        <span>Travaillez-vous en néerlandais, français et anglais ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui — nous opérons dans les trois langues et servons des clients dans les deux régions linguistiques de Belgique.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+        <span>Pouvez-vous concevoir une mission qui ne figure pas dans vos services ?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Absolument — nous concevons des missions drone entièrement personnalisées pour chaque secteur, site ou cas d'usage. Contactez-nous pour discuter de vos besoins spécifiques.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleFaq(btn) {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-question').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    }
+  </script>
 </section>
 
 <section class="cta-section" id="contact">

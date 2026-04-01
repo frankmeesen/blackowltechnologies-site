@@ -208,4 +208,39 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
   </url>
 
+  <!-- ═══ CUSTOM MISSION PAGES ═══ -->
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/services/custom-mission.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/custom-mission.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/mission-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/opdracht-op-maat.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/custom-mission.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/nl/services/opdracht-op-maat.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/custom-mission.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/mission-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/opdracht-op-maat.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/custom-mission.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/fr/services/mission-sur-mesure.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/custom-mission.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/mission-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/opdracht-op-maat.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/custom-mission.html"/>
+  </url>
+
 </urlset>
