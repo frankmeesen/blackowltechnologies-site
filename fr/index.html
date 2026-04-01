@@ -546,41 +546,70 @@
 
   .cta-form {
     display: flex;
-    justify-content: center;
-    gap: 0;
-    max-width: 560px;
-    margin: 0 auto 2.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 100%;
+  }
+
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
   }
 
   .cta-input {
-    flex: 1;
-    background: var(--black);
+    width: 100%;
+    background: #0f0f0f;
     border: 0.5px solid rgba(239,159,39,0.3);
-    border-right: none;
+    border-radius: 3px;
     color: var(--white);
     font-family: 'Barlow', sans-serif;
     font-size: 0.9rem;
-    padding: 0.9rem 1.2rem;
+    padding: 0.85rem 1.1rem;
     outline: none;
+    transition: border-color 0.2s;
   }
-  .cta-input::placeholder { color: var(--muted); }
+  .cta-input::placeholder { color: #4a4a44; font-size: 0.88rem; }
   .cta-input:focus { border-color: var(--amber); }
+
+  textarea.cta-input {
+    resize: vertical;
+    min-height: 110px;
+  }
 
   .cta-btn {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     background: var(--amber);
     color: var(--black);
     border: none;
-    padding: 0.9rem 1.8rem;
+    border-radius: 3px;
+    padding: 0.9rem 2rem;
     cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s;
+    width: 100%;
+    margin-top: 0.25rem;
+    transition: background 0.2s, transform 0.15s;
   }
-  .cta-btn:hover { background: var(--amber-light); }
+  .cta-btn:hover { background: var(--amber-light); transform: translateY(-1px); }
 
   .cta-detail {
     font-family: 'Barlow Condensed', sans-serif;
@@ -932,8 +961,25 @@
   <p class="cta-sub">Recevez une proposition d’inspection sous 24h.</p>
 
   <div class="cta-form">
-    <input type="email" class="cta-input" placeholder="Votre adresse email professionnelle" id="email-input">
-    <button class="cta-btn" onclick="handleSubmit()">Demander un Devis →</button>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="input-name">Nom complet *</label>
+        <input type="text" class="cta-input" placeholder="ex. Jean Dupont" id="input-name" required />
+      </div>
+      <div class="form-group">
+        <label for="input-email">Adresse e-mail *</label>
+        <input type="email" class="cta-input" placeholder="ex. jean@entreprise.com" id="input-email" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="input-phone">Téléphone <span style="font-size:0.75rem;color:#555">(optionnel)</span></label>
+      <input type="tel" class="cta-input" placeholder="ex. +32 ..." id="input-phone" />
+    </div>
+    <div class="form-group">
+      <label for="input-message">Votre projet *</label>
+      <textarea class="cta-input" placeholder="ex. Inspection thermique d'un toit d'entrepôt ~5000m² à Liège / Vérification panneaux solaires / Cartographie de chantier…" id="input-message" required></textarea>
+    </div>
+    <button class="cta-btn" onclick="handleSubmit()">Demander mon devis →</button>
   </div>
   <div class="cta-detail" id="form-msg">Sans engagement. Tarification claire. Réponse rapide.</div>
   <div id="form-success" style="display:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;margin-top:1rem;">✓ Message envoyé — nous vous contacterons dans un jour ouvrable.</div>
@@ -962,31 +1008,47 @@
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function handleSubmit() {
-    const email = document.getElementById('email-input').value;
+    const name = document.getElementById('input-name').value;
+    const email = document.getElementById('input-email').value;
+    const phone = document.getElementById('input-phone').value;
+    const message = document.getElementById('input-message').value;
     const msg = document.getElementById('form-msg');
+    if (!name) {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Veuillez entrer votre nom.';
+      return;
+    }
     if (!email || !email.includes('@')) {
       msg.style.color = '#E24B4A';
-      msg.textContent = 'Please enter a valid email address.';
+      msg.textContent = 'Veuillez entrer une adresse e-mail valide.';
+      return;
+    }
+    if (!message) {
+      msg.style.color = '#E24B4A';
+      msg.textContent = 'Veuillez décrire votre projet.';
       return;
     }
     msg.textContent = '';
     fetch('https://formspree.io/f/xwvwlqva', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ email: email })
+      body: JSON.stringify({ name, email, phone, message })
     })
     .then(res => {
       if (res.ok) {
-        document.getElementById('email-input').value = '';
+        document.getElementById('input-name').value = '';
+        document.getElementById('input-email').value = '';
+        document.getElementById('input-phone').value = '';
+        document.getElementById('input-message').value = '';
         document.getElementById('form-success').style.display = 'block';
       } else {
         msg.style.color = '#E24B4A';
-        msg.textContent = 'Something went wrong. Please email us directly.';
+        msg.textContent = 'Une erreur est survenue. Veuillez nous contacter directement par e-mail.';
       }
     })
     .catch(() => {
       msg.style.color = '#E24B4A';
-      msg.textContent = 'Something went wrong. Please email us directly.';
+      msg.textContent = 'Une erreur est survenue. Veuillez nous contacter directement par e-mail.';
     });
   }
 
