@@ -142,25 +142,27 @@
   }
   .nav-cta:hover { background: var(--amber-light); }
 
-  .lang-switcher {
-    display: flex;
-    gap: 0.3rem;
-    align-items: center;
-    margin-left: 1rem;
-  }
-  .lang-btn {
+  .lang-select {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.12em;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 0.3rem 0.5rem;
-    border: 0.5px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: transparent;
+    border: 0.5px solid var(--border);
+    padding: 0.35rem 1.6rem 0.35rem 0.6rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23ef9f27'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    margin-left: 1rem;
+    transition: border-color 0.2s;
   }
-  .lang-btn:hover { color: var(--amber); }
-  .lang-btn.active { color: var(--amber); border-color: var(--border); }
+  .lang-select:hover { border-color: var(--amber); }
+  .lang-select option { background: #1a1a1a; color: var(--white); }
 
   .hero {
     min-height: 100vh;
@@ -780,11 +782,11 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Offerte Aanvragen</button>
-  <div class="lang-switcher">
-    <a href="https://www.blackowltechnologies.com/" class="lang-btn">EN</a>
-    <a href="https://www.blackowltechnologies.com/fr/" class="lang-btn">FR</a>
-    <a href="https://www.blackowltechnologies.com/nl/" class="lang-btn active">NL</a>
-  </div>
+  <select class="lang-select" onchange="window.location=this.value">
+    <option value="https://www.blackowltechnologies.com/">EN</option>
+    <option value="https://www.blackowltechnologies.com/fr/">FR</option>
+    <option value="https://www.blackowltechnologies.com/nl/" selected>NL</option>
+  </select>
 </nav>
 
 <section class="hero" id="hero">
