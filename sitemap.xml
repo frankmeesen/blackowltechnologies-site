@@ -2,9 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ═══ INDEX PAGES ═══ -->
+
   <url>
     <loc>https://www.blackowltechnologies.com/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/"/>
@@ -15,7 +17,7 @@
 
   <url>
     <loc>https://www.blackowltechnologies.com/fr/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/"/>
@@ -26,13 +28,184 @@
 
   <url>
     <loc>https://www.blackowltechnologies.com/nl/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/"/>
+  </url>
+
+  <!-- ═══ ENGLISH SERVICE PAGES ═══ -->
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/services/thermal-inspections.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/thermal-inspections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/inspections-thermiques.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/thermische-inspecties.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/thermal-inspections.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/services/drone-inspections.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/drone-inspections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/inspections-par-drone.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/drone-inspecties.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/drone-inspections.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/services/3d-mapping.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/3d-mapping.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/cartographie-3d.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/3d-kartering.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/3d-mapping.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/services/aerial-photography.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/aerial-photography.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/photographie-aerienne.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/luchtfotografie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/aerial-photography.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/services/forestry-land-monitoring.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/surveillance-forestiere.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/bos-terreinmonitoring.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
+  </url>
+
+  <!-- ═══ DUTCH SERVICE PAGES ═══ -->
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/nl/services/thermische-inspecties.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/thermal-inspections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/inspections-thermiques.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/thermische-inspecties.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/thermal-inspections.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/nl/services/drone-inspecties.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/drone-inspections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/inspections-par-drone.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/drone-inspecties.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/drone-inspections.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/nl/services/3d-kartering.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/3d-mapping.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/cartographie-3d.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/3d-kartering.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/3d-mapping.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/nl/services/luchtfotografie.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/aerial-photography.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/photographie-aerienne.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/luchtfotografie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/aerial-photography.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/nl/services/bos-terreinmonitoring.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/surveillance-forestiere.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/bos-terreinmonitoring.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
+  </url>
+
+  <!-- ═══ FRENCH SERVICE PAGES ═══ -->
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/fr/services/inspections-thermiques.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/thermal-inspections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/inspections-thermiques.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/thermische-inspecties.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/thermal-inspections.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/fr/services/inspections-par-drone.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/drone-inspections.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/inspections-par-drone.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/drone-inspecties.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/drone-inspections.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/fr/services/cartographie-3d.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/3d-mapping.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/cartographie-3d.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/3d-kartering.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/3d-mapping.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/fr/services/photographie-aerienne.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/aerial-photography.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/photographie-aerienne.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/luchtfotografie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/aerial-photography.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.blackowltechnologies.com/fr/services/surveillance-forestiere.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/services/surveillance-forestiere.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/services/bos-terreinmonitoring.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"/>
   </url>
 
 </urlset>

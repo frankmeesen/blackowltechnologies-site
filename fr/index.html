@@ -5,10 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Black Owl Technologies — Inspection par Drone Belgique</title>
   <meta name="description" content="Inspection professionnelle par drone, imagerie thermique, cartographie 3D et photographie aérienne en Belgique. Certifié EASA. Résultats rapides.">
+  <link rel="canonical" href="https://www.blackowltechnologies.com/fr/">
   <link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/" />
   <link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/" />
   <link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/" />
   <link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Black Owl Technologies" />
+  <meta property="og:title" content="Black Owl Technologies — Inspection par Drone Belgique" />
+  <meta property="og:description" content="Inspection professionnelle par drone, imagerie thermique, cartographie 3D et photographie aérienne en Belgique. Certifié EASA. Résultats rapides." />
+  <meta property="og:url" content="https://www.blackowltechnologies.com/fr/" />
+  <meta property="og:image" content="https://www.blackowltechnologies.com/black_owl_logo_1x1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:locale" content="fr_BE" />
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Black Owl Technologies — Inspection par Drone Belgique" />
+  <meta name="twitter:description" content="Inspection professionnelle par drone, imagerie thermique, cartographie 3D et photographie aérienne en Belgique. Certifié EASA." />
+  <meta name="twitter:image" content="https://www.blackowltechnologies.com/black_owl_logo_1x1.png" />
+
+  <!-- SEO: JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Black Owl Technologies",
+    "description": "Inspection professionnelle par drone, imagerie thermique, cartographie 3D et photographie aérienne en Belgique. Certifié EASA. Résultats rapides.",
+    "url": "https://www.blackowltechnologies.com",
+    "logo": "https://www.blackowltechnologies.com/black_owl_logo_1x1.png",
+    "image": "https://www.blackowltechnologies.com/black_owl_logo_1x1.png",
+    "telephone": "+32472511598",
+    "email": "info@blackowltechnologies.com",
+    "currenciesAccepted": "EUR",
+    "priceRange": "€€",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Belgium"
+    },
+    "hasCredential": "EASA Drone Operator Certificate",
+    "knowsLanguage": ["en", "fr", "nl"],
+    "sameAs": [
+      "https://www.blackowltechnologies.com",
+      "https://www.blackowltechnologies.com/fr/",
+      "https://www.blackowltechnologies.com/nl/"
+    ],
+    "offers": [
+      {"@type": "Offer", "name": "Thermal Inspections", "url": "https://www.blackowltechnologies.com/services/thermal-inspections.html"},
+      {"@type": "Offer", "name": "Drone Inspections", "url": "https://www.blackowltechnologies.com/services/drone-inspections.html"},
+      {"@type": "Offer", "name": "3D Mapping", "url": "https://www.blackowltechnologies.com/services/3d-mapping.html"},
+      {"@type": "Offer", "name": "Aerial Photography", "url": "https://www.blackowltechnologies.com/services/aerial-photography.html"},
+      {"@type": "Offer", "name": "Forestry & Land Monitoring", "url": "https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"}
+    ]
+  }
+  </script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -348,7 +401,10 @@
     position: relative;
     overflow: hidden;
     transition: background 0.3s;
-    cursor: default;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: inherit;
   }
   .service-card:hover { background: var(--black-3); }
   .service-card:hover .service-arrow { color: var(--amber); transform: translate(4px, -4px); }
@@ -793,7 +849,7 @@
   </div>
 
   <div class="services-grid">
-    <div class="service-card">
+    <a class="service-card" href="/fr/services/inspections-thermiques.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">01 — Thermique</div>
       <div class="service-name">Inspections Thermiques</div>
@@ -805,9 +861,9 @@
         <span class="use-pill">Façades Industrielles</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/fr/services/inspections-par-drone.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">02 — Inspection</div>
       <div class="service-name">Inspections par Drone</div>
@@ -819,9 +875,9 @@
         <span class="use-pill">Ponts</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/fr/services/cartographie-3d.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">03 — Cartographie</div>
       <div class="service-name">Cartographie 3D</div>
@@ -834,9 +890,9 @@
         <span class="use-pill">Calcul de Volume</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/fr/services/photographie-aerienne.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">04 — Visuel</div>
       <div class="service-name">Photographie Aérienne</div>
@@ -848,9 +904,9 @@
         <span class="use-pill">Événements</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/fr/services/surveillance-forestiere.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">05 — Environnemental</div>
       <div class="service-name">Surveillance Forestière et Foncière</div>
@@ -862,7 +918,7 @@
         <span class="use-pill">Agriculture</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
   </div>
 </section>
 

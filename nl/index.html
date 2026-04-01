@@ -3,12 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Owl Technologies — Drone Inspectie België</title>
+<title>Black Owl Technologies België — Drone Inspectie</title>
   <meta name="description" content="Professionele drone-inspectie, thermische beeldvorming, 3D-kartering en luchtfotografie in heel België. EASA gecertificeerd. Snelle levering.">
+  <link rel="canonical" href="https://www.blackowltechnologies.com/nl/">
   <link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/" />
   <link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/" />
   <link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/" />
   <link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/" />
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Black Owl Technologies" />
+  <meta property="og:title" content="Black Owl Technologies — Drone Inspectie België" />
+  <meta property="og:description" content="Professionele drone-inspectie, thermische beeldvorming, 3D-kartering en luchtfotografie in heel België. EASA gecertificeerd. Snelle levering." />
+  <meta property="og:url" content="https://www.blackowltechnologies.com/nl/" />
+  <meta property="og:image" content="https://www.blackowltechnologies.com/black_owl_logo_1x1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:locale" content="nl_BE" />
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Black Owl Technologies — Drone Inspectie België" />
+  <meta name="twitter:description" content="Professionele drone-inspectie, thermische beeldvorming, 3D-kartering en luchtfotografie in heel België. EASA gecertificeerd." />
+  <meta name="twitter:image" content="https://www.blackowltechnologies.com/black_owl_logo_1x1.png" />
+
+  <!-- SEO: JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Black Owl Technologies",
+    "description": "Professionele drone-inspectie, thermische beeldvorming, 3D-kartering en luchtfotografie in heel België. EASA gecertificeerd. Snelle levering.",
+    "url": "https://www.blackowltechnologies.com",
+    "logo": "https://www.blackowltechnologies.com/black_owl_logo_1x1.png",
+    "image": "https://www.blackowltechnologies.com/black_owl_logo_1x1.png",
+    "telephone": "+32472511598",
+    "email": "info@blackowltechnologies.com",
+    "currenciesAccepted": "EUR",
+    "priceRange": "€€",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Belgium"
+    },
+    "hasCredential": "EASA Drone Operator Certificate",
+    "knowsLanguage": ["en", "fr", "nl"],
+    "sameAs": [
+      "https://www.blackowltechnologies.com",
+      "https://www.blackowltechnologies.com/fr/",
+      "https://www.blackowltechnologies.com/nl/"
+    ],
+    "offers": [
+      {"@type": "Offer", "name": "Thermal Inspections", "url": "https://www.blackowltechnologies.com/services/thermal-inspections.html"},
+      {"@type": "Offer", "name": "Drone Inspections", "url": "https://www.blackowltechnologies.com/services/drone-inspections.html"},
+      {"@type": "Offer", "name": "3D Mapping", "url": "https://www.blackowltechnologies.com/services/3d-mapping.html"},
+      {"@type": "Offer", "name": "Aerial Photography", "url": "https://www.blackowltechnologies.com/services/aerial-photography.html"},
+      {"@type": "Offer", "name": "Forestry & Land Monitoring", "url": "https://www.blackowltechnologies.com/services/forestry-land-monitoring.html"}
+    ]
+  }
+  </script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -348,7 +401,10 @@
     position: relative;
     overflow: hidden;
     transition: background 0.3s;
-    cursor: default;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: inherit;
   }
   .service-card:hover { background: var(--black-3); }
   .service-card:hover .service-arrow { color: var(--amber); transform: translate(4px, -4px); }
@@ -793,7 +849,7 @@
   </div>
 
   <div class="services-grid">
-    <div class="service-card">
+    <a class="service-card" href="/nl/services/thermische-inspecties.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">01 — Thermisch</div>
       <div class="service-name">Thermische Inspecties</div>
@@ -805,9 +861,9 @@
         <span class="use-pill">Industriële Gevels</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/nl/services/drone-inspecties.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">02 — Inspectie</div>
       <div class="service-name">Drone Inspecties</div>
@@ -819,9 +875,9 @@
         <span class="use-pill">Bruggen</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/nl/services/3d-kartering.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">03 — Kartering</div>
       <div class="service-name">3D Kartering</div>
@@ -833,9 +889,9 @@
         <span class="use-pill">Volumeberekening</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/nl/services/luchtfotografie.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">04 — Visueel</div>
       <div class="service-name">Luchtfotografie</div>
@@ -847,9 +903,9 @@
         <span class="use-pill">Evenementen</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
 
-    <div class="service-card">
+    <a class="service-card" href="/nl/services/bos-terreinmonitoring.html">
       <div class="service-icon-line"></div>
       <div class="service-tag">05 — Omgeving</div>
       <div class="service-name">Bos- en Terreinmonitoring</div>
@@ -861,7 +917,7 @@
         <span class="use-pill">Landbouw</span>
       </div>
       <div class="service-arrow">↗</div>
-    </div>
+    </a>
   </div>
 </section>
 
