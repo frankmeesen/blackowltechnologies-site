@@ -129,7 +129,66 @@
       .cta-section { padding: 64px 24px; }
       footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
     }
-  </style>
+  
+  /* ===== DAY / NIGHT THEME TOGGLE ===== */
+  .theme-toggle {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    color: var(--white);
+  }
+  .theme-toggle:hover { border-color: var(--amber); }
+
+  html[data-theme="light"] {
+    --black: #F5F0E8;
+    --black-2: #EDE8DF;
+    --black-3: #E0D9CE;
+    --white: #1C1A16;
+    --muted: #6a6a5a;
+    --border: rgba(212,170,60,0.28);
+  }
+  html[data-theme="light"] nav {
+    background: rgba(245,240,232,0.95) !important;
+  }
+  html[data-theme="light"] .lang-bar {
+    background: rgba(245,240,232,0.98) !important;
+  }
+  html[data-theme="light"] .lang-select option {
+    background: #EDE8DF;
+    color: #1C1A16;
+  }
+  html[data-theme="light"] .logo-text { color: #1C1A16; }
+  html[data-theme="light"] .hero-bg {
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(212,170,60,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(212,170,60,0.10) 0%, transparent 60%),
+      #F5F0E8;
+  }
+  html[data-theme="light"] .cta-input {
+    background: #FFFFFF;
+    color: #1C1A16;
+  }
+  html[data-theme="light"] .cta-input::placeholder { color: #aaa9a0; }
+  html[data-theme="light"] .nav-cta,
+  html[data-theme="light"] .btn-primary,
+  html[data-theme="light"] .cta-btn { color: #1C1A16 !important; }
+  html[data-theme="light"] .case-card:hover { background: #D8D2C5; }
+  html[data-theme="light"] .theme-toggle { color: #1C1A16; }
+</style>
+<script>
+(function(){document.documentElement.setAttribute('data-theme',localStorage.getItem('bot-theme')||'light');})();
+</script>
 </head>
 <body>
 
@@ -145,6 +204,7 @@
     <li><a href="../index.html#contact">Contact</a></li>
   </ul>
   <a href="../index.html#contact" class="nav-cta">Demander un levé</a>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle day/night mode">🌙</button>
 </nav>
 
 <section class="hero">
@@ -287,5 +347,9 @@
   <div class="footer-copy">© 2025 Black Owl Technologies. Certifié EASA. Belgique.</div>
 </footer>
 
+<script>
+(function(){var t=document.documentElement.getAttribute('data-theme')||'light';var b=document.getElementById('themeToggle');if(b)b.textContent=t==='light'?'🌙':'☀️';})();
+function toggleTheme(){var h=document.documentElement;var n=h.getAttribute('data-theme')==='light'?'dark':'light';h.setAttribute('data-theme',n);localStorage.setItem('bot-theme',n);var b=document.getElementById('themeToggle');if(b)b.textContent=n==='light'?'🌙':'☀️';}
+</script>
 </body>
 </html>
