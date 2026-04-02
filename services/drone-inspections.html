@@ -217,11 +217,7 @@
   }
   html[data-theme="light"] .logo-text { color: #1C1A16; }
   html[data-theme="light"] .logo-tech { color: #1C1A16; }
-  html[data-theme="light"] .logo-img {
-    background: #0a0a0a;
-    border-radius: 6px;
-    padding: 3px;
-  }
+  
   html[data-theme="light"] .hero-bg {
     background:
       radial-gradient(ellipse 60% 50% at 70% 40%, rgba(212,170,60,0.15) 0%, transparent 70%),
@@ -238,6 +234,13 @@
   html[data-theme="light"] .cta-btn { color: #1C1A16 !important; }
   html[data-theme="light"] .case-card:hover { background: #D8D2C5; }
   html[data-theme="light"] .theme-toggle { color: #1C1A16; }
+
+  /* ── DUAL LOGO (dark / light theme swap) ── */
+  .logo-img-dark  { height:100px; width:100px; object-fit:contain; display:block; }
+  .logo-img-light { height:44px;  width:44px;  object-fit:contain; display:none; }
+  html[data-theme="light"] .logo-img-dark  { display:none !important; }
+  html[data-theme="light"] .logo-img-light { display:block !important; }
+  html[data-theme="light"] .logo-img { background:none !important; border-radius:0 !important; padding:0 !important; }
 </style>
 <script>
 (function(){document.documentElement.setAttribute('data-theme',localStorage.getItem('bot-theme')||'light');})();
@@ -246,7 +249,7 @@
 <body>
 
 <nav>
-  <a href="../index.html" class="logo"><img src="black_owl_logo_1x1.png" alt="Black Owl Technologies" class="logo-img" /><span class="logo-text">Black <span class="logo-owl">Owl</span> <span class="logo-tech">Technologies</span></span></a>
+  <a href="../index.html" class="logo"><img src="black_owl_logo_1x1.png" alt="Black Owl Technologies" class="logo-img logo-img-dark" /><img src="black_owl_logo_light.png" alt="Black Owl Technologies" class="logo-img logo-img-light" /><span class="logo-text">Black <span class="logo-owl">Owl</span> <span class="logo-tech">Technologies</span></span></a>
   <ul class="nav-links">
     <li><a href="../index.html#services" class="active">Services</a></li>
     <li><a href="../index.html#sectors">Sectors</a></li>
