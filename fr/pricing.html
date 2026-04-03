@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarifs — Black Owl Technologies Belgique</title>
+<meta name="description" content="Tarifs transparents pour nos services de drone en Belgique : inspections, thermographie, cartographie 3D et photographie aérienne. Prix de départ hors TVA.">
+<link rel="canonical" href="https://www.blackowltechnologies.com/fr/pricing.html">
+<link rel="alternate" hreflang="en" href="https://www.blackowltechnologies.com/pricing.html">
+<link rel="alternate" hreflang="fr" href="https://www.blackowltechnologies.com/fr/pricing.html">
+<link rel="alternate" hreflang="nl" href="https://www.blackowltechnologies.com/nl/pricing.html">
+<link rel="alternate" hreflang="x-default" href="https://www.blackowltechnologies.com/pricing.html">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0a0a0a; --black-2: #111111; --black-3: #1a1a1a;
+    --amber: #D4AA3C; --amber-light: #E8C86E; --amber-dark: #A0802D;
+    --white: #f5f0e8; --muted: #888880; --border: rgba(212,170,60,0.18);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: rgba(10,10,10,0.92); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.12em; color: var(--white); text-decoration: none; }
+  .logo span { color: var(--amber); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+  .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); background: var(--amber); border: none; padding: 0.55rem 1.4rem; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--amber-light); }
+  .page-hero { padding: 10rem 3rem 5rem; position: relative; overflow: hidden; }
+  .page-hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(212,170,60,0.06) 0%, transparent 70%), #0a0a0a; }
+  .page-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(212,170,60,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(212,170,60,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); }
+  .page-hero-content { position: relative; max-width: 700px; }
+  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--amber); }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.92; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.5rem; }
+  .page-title .accent { color: var(--amber); }
+  .page-sub { font-size: 1rem; font-weight: 300; color: var(--muted); max-width: 560px; line-height: 1.75; }
+  .notice-bar { margin: 0 3rem 0; padding: 1rem 1.5rem; border: 0.5px solid var(--border); background: rgba(212,170,60,0.04); display: flex; align-items: flex-start; gap: 1rem; }
+  .notice-icon { color: var(--amber); font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .notice-bar p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .notice-bar strong { color: var(--white); font-weight: 500; }
+  .pricing-section { padding: 4rem 3rem 6rem; }
+  .service-block { margin-bottom: 4rem; border-top: 0.5px solid var(--border); padding-top: 3rem; }
+  .service-block:first-child { border-top: none; padding-top: 0; }
+  .service-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.6rem; }
+  .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.06em; color: var(--white); }
+  .service-from { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); }
+  .service-desc { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; max-width: 640px; line-height: 1.7; }
+  .service-licence { font-size: 0.8rem; color: var(--muted); max-width: 640px; line-height: 1.7; margin-top: -1rem; margin-bottom: 2rem; padding-left: 0.9rem; border-left: 2px solid rgba(212,170,60,0.3); }
+  .service-licence span { color: var(--amber-light); font-weight: 500; }
+  .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); }
+  .tier { background: var(--black-2); padding: 1.8rem 1.6rem; position: relative; transition: background 0.2s; }
+  .tier:hover { background: var(--black-3); }
+  .tier.featured { background: var(--black-3); outline: 0.5px solid rgba(212,170,60,0.35); }
+  .tier-badge { position: absolute; top: -1px; right: -1px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); background: var(--amber); padding: 0.2rem 0.6rem; }
+  .tier-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; }
+  .tier-from-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.2rem; }
+  .tier-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.25rem; }
+  .tier-price .currency { font-size: 1.4rem; vertical-align: top; margin-top: 0.3rem; display: inline-block; }
+  .tier-price .suffix { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); vertical-align: bottom; margin-bottom: 0.3rem; display: inline-block; }
+  .tier-vat { font-size: 0.72rem; color: var(--muted); margin-bottom: 1.2rem; font-style: italic; }
+  .tier-includes { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+  .tier-includes li { font-size: 0.82rem; color: var(--muted); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5; }
+  .tier-includes li::before { content: '—'; color: var(--amber); flex-shrink: 0; font-size: 0.75rem; margin-top: 0.05rem; }
+  .tier-quote { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; color: var(--amber); letter-spacing: 0.04em; line-height: 1; margin-bottom: 0.25rem; }
+  .extras-section { padding: 0 3rem 5rem; border-top: 0.5px solid var(--border); padding-top: 3rem; }
+  .extras-title { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .extras-title::before { content: ''; display: block; width: 30px; height: 1px; background: var(--amber); }
+  .extras-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); }
+  .extra-item { background: var(--black-2); padding: 1.4rem 1.5rem; }
+  .extra-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .extra-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.04em; }
+  .extra-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.5; }
+  .cta-section { margin: 0 3rem 6rem; padding: 4rem 3rem; background: var(--black-2); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 100% at 90% 50%, rgba(212,170,60,0.06) 0%, transparent 70%); }
+  .cta-text { position: relative; }
+  .cta-text h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.04em; color: var(--white); line-height: 1; margin-bottom: 0.6rem; }
+  .cta-text h2 span { color: var(--amber); }
+  .cta-text p { font-size: 0.9rem; color: var(--muted); max-width: 440px; line-height: 1.7; }
+  .cta-actions { display: flex; gap: 1rem; align-items: center; position: relative; flex-shrink: 0; }
+  .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background: var(--amber); color: var(--black); border: none; padding: 1rem 2.2rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--amber-light); transform: translateY(-1px); }
+  .btn-secondary { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; background: transparent; color: var(--white); border: 0.5px solid rgba(245,240,232,0.3); padding: 1rem 2.2rem; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+  .btn-secondary:hover { border-color: var(--amber); color: var(--amber); }
+  footer { border-top: 0.5px solid var(--border); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+    .page-hero, .pricing-section, .extras-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .notice-bar, .cta-section { margin-left: 1.5rem; margin-right: 1.5rem; }
+    .cta-section { padding: 2rem 1.5rem; } footer { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/fr/" class="logo">Black <span>Owl</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/#services">Services</a></li>
+    <li><a href="/fr/pricing.html" class="active">Tarifs</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="/contact.html" class="nav-cta">Demander un Devis</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="eyebrow">Tarifs Transparents</div>
+    <h1 class="page-title">Combien<br>Ça <span class="accent">Coûte ?</span></h1>
+    <p class="page-sub">Chaque mission est unique. Les prix ci-dessous sont des points de départ pour des périmètres standards — le devis final dépend de la complexité du site, de la distance de déplacement, des autorisations requises et du format de livraison. Tous les prix sont hors TVA.</p>
+  </div>
+</section>
+
+<div class="notice-bar">
+  <div class="notice-icon">⚠</div>
+  <p><strong>Le périmètre détermine le coût.</strong> Les autorisations d'espace aérien restreint, les opérations BVLOS, les terrains difficiles, les déploiements multi-jours et les délais urgents influencent le prix final. Utilisez les chiffres ci-dessous comme référence — puis <a href="/contact.html" style="color: var(--amber); text-decoration: none;">demandez un devis personnalisé</a>.</p>
+</div>
+
+<section class="pricing-section">
+
+  <div class="service-block" id="aerial-photography">
+    <div class="service-header">
+      <h2 class="service-name">Photographie &amp; Vidéographie Aérienne</h2>
+      <span class="service-from">Dès €500 HT</span>
+    </div>
+    <p class="service-desc">Photos haute résolution et vidéos cinématiques pour l'immobilier, la construction, les événements et le marketing. Livrés en fichiers montés ou en rushes selon le forfait.</p>
+    <p class="service-licence">Les prix couvrent la captation et une licence d'utilisation standard (web &amp; usage interne). La <span>réutilisation commerciale</span> — publicité, campagnes payantes, diffusion ou marketing produit — nécessite une licence d'utilisation distincte, établie selon le support et la portée de diffusion.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-name">Standard</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>500<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · par session</div>
+        <ul class="tier-includes">
+          <li>1 lieu · ~1h de vol</li>
+          <li>Jusqu'à 20 photos retouchées</li>
+          <li>Vidéo drone standard</li>
+          <li>Livraison sous 3–5 jours ouvrables</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">Le Plus Demandé</div>
+        <div class="tier-name">Étendu</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>950<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · par demi-journée</div>
+        <ul class="tier-includes">
+          <li>Plusieurs angles / lieux</li>
+          <li>Package photo + vidéo monté</li>
+          <li>Vidéo étalonnée couleur</li>
+          <li>Livraison sous 3–5 jours ouvrables</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Production Complète</div>
+        <div class="tier-quote">Devis Personnalisé</div>
+        <div class="tier-vat">HT · journée complète +</div>
+        <ul class="tier-includes">
+          <li>Déploiement sur site à la journée</li>
+          <li>Configuration multi-caméras disponible</li>
+          <li>Post-production avancée</li>
+          <li>Chef de projet dédié</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block" id="drone-inspections">
+    <div class="service-header">
+      <h2 class="service-name">Inspections par Drone</h2>
+      <span class="service-from">Dès €350 HT</span>
+    </div>
+    <p class="service-desc">Inspection visuelle de toitures, façades, pylônes, ponts et structures industrielles. Plus sûr et plus rapide que les échafaudages — avec un rapport photo complet et une documentation professionnelle.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-name">Standard</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>350<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · par site</div>
+        <ul class="tier-includes">
+          <li>Inspection visuelle + photos</li>
+          <li>Rapport d'état de base</li>
+          <li>Adapté au résidentiel / petit commercial</li>
+          <li>Livraison sous 3–5 jours ouvrables</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">Le Plus Populaire</div>
+        <div class="tier-name">Détaillé</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>700<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · par site</div>
+        <ul class="tier-includes">
+          <li>Rapport annoté haute résolution</li>
+          <li>Cartographie des défauts avec tags GPS</li>
+          <li>Livraison urgente disponible (supplément)</li>
+          <li>Adapté au commercial / industriel</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Industriel / Complexe</div>
+        <div class="tier-quote">Devis Personnalisé</div>
+        <div class="tier-vat">HT</div>
+        <ul class="tier-includes">
+          <li>Multi-structures ou grand site</li>
+          <li>Accès confiné / milieu dangereux</li>
+          <li>Intégration gestion d'actifs</li>
+          <li>Documentation de conformité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block" id="thermal-inspections">
+    <div class="service-header">
+      <h2 class="service-name">Inspections Thermiques</h2>
+      <span class="service-from">Dès €450 HT</span>
+    </div>
+    <p class="service-desc">Thermographie radiométrique pour la détection des pertes de chaleur, l'efficacité des panneaux solaires, les points chauds électriques et les infiltrations d'humidité. Rapports exploitables avec superpositions thermiques.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-name">Résidentiel</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>450<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · par propriété</div>
+        <ul class="tier-includes">
+          <li>Pertes thermiques enveloppe bâtiment</li>
+          <li>Panneaux solaires (jusqu'à 30 panneaux)</li>
+          <li>Rapport thermique + visuel</li>
+          <li>Livraison sous 3–5 jours ouvrables</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">Le Plus Demandé</div>
+        <div class="tier-name">Commercial</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>950<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · par site</div>
+        <ul class="tier-includes">
+          <li>Façade + toiture complètes</li>
+          <li>Systèmes CVC et électriques</li>
+          <li>Rapport radiométrique annoté</li>
+          <li>Cartographie d'humidité toiture plate</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Industriel / Grande Échelle</div>
+        <div class="tier-quote">Devis Personnalisé</div>
+        <div class="tier-vat">HT</div>
+        <ul class="tier-includes">
+          <li>Fermes solaires &amp; parcs PV</li>
+          <li>Infrastructure réseau / sous-stations</li>
+          <li>Grandes installations industrielles</li>
+          <li>Contrats de surveillance périodique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block" id="3d-mapping">
+    <div class="service-header">
+      <h2 class="service-name">Cartographie &amp; Relevés 3D</h2>
+      <span class="service-from">Dès €600 HT</span>
+    </div>
+    <p class="service-desc">Modèles 3D photogrammétriques, orthomosaïques et modèles numériques d'élévation. Utilisés en construction, architecture, gestion foncière et applications d'urbanisme.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-name">Petit Site</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>600<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · jusqu'à 1 ha</div>
+        <ul class="tier-includes">
+          <li>Modèle 3D + orthomosaïque</li>
+          <li>Précision standard</li>
+          <li>Livrables DXF / OBJ / PDF</li>
+          <li>Adapté aux bâtiments, parcelles</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">Meilleur Rapport Qualité/Prix</div>
+        <div class="tier-name">Site Moyen</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>1,500<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · 1–5 ha</div>
+        <ul class="tier-includes">
+          <li>Nuage de points haute densité</li>
+          <li>Référencé GCP si requis</li>
+          <li>Calculs de volumes disponibles</li>
+          <li>Prêt pour construction / usage foncier</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Grand Site / Haute Précision</div>
+        <div class="tier-quote">Devis Personnalisé</div>
+        <div class="tier-vat">HT · 5 ha +</div>
+        <ul class="tier-includes">
+          <li>Précision centimétrique RTK / PPK</li>
+          <li>Multi-vols ou multi-jours</li>
+          <li>Intégration CAO / SIG</li>
+          <li>Carrières, grands domaines, infrastructures</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block" id="forestry">
+    <div class="service-header">
+      <h2 class="service-name">Surveillance Forestière &amp; Foncière</h2>
+      <span class="service-from">Dès €750 HT</span>
+    </div>
+    <p class="service-desc">Analyse multispectrale, cartographie de santé végétale (NDVI), comptage d'arbres et détection de changements pour gestionnaires fonciers, forestiers et consultants environnementaux.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-name">Relevé Unique</div>
+        <div class="tier-from-label">Dès</div>
+        <div class="tier-price"><span class="currency">€</span>750<span class="suffix">+</span></div>
+        <div class="tier-vat">HT · petite parcelle</div>
+        <ul class="tier-includes">
+          <li>Carte de végétation RGB + NDVI</li>
+          <li>Rapport de couverture forestière</li>
+          <li>Jusqu'à ~5 ha</li>
+          <li>Livré en GeoTIFF / PDF</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Surveillance Périodique</div>
+        <div class="tier-quote">Devis Personnalisé</div>
+        <div class="tier-vat">HT · contrat</div>
+        <ul class="tier-includes">
+          <li>Relevés saisonniers ou mensuels</li>
+          <li>Détection de changements &amp; tendances</li>
+          <li>Grandes parcelles et forêts</li>
+          <li>Tableau de bord de reporting personnalisé</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Mission Personnalisée</div>
+        <div class="tier-quote">Devis Personnalisé</div>
+        <div class="tier-vat">HT</div>
+        <ul class="tier-includes">
+          <li>Collecte de données sur mesure</li>
+          <li>Capteurs spécialisés</li>
+          <li>Conformité environnementale &amp; recherche</li>
+          <li>Déploiements multi-sites</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="extras-section">
+  <div class="extras-title">Coûts Additionnels à Connaître</div>
+  <div class="extras-grid">
+    <div class="extra-item">
+      <div class="extra-label">Déplacements</div>
+      <div class="extra-value">€0.60 / km</div>
+      <div class="extra-note">Depuis notre base. Distance aller-retour. HT.</div>
+    </div>
+    <div class="extra-item">
+      <div class="extra-label">Livraison Urgente</div>
+      <div class="extra-value">+25%</div>
+      <div class="extra-note">Sur le tarif standard si livraison requise sous 24h.</div>
+    </div>
+    <div class="extra-item">
+      <div class="extra-label">Autorisations de Vol</div>
+      <div class="extra-value">Au Coût Réel</div>
+      <div class="extra-note">Autorisations DGTA / zones restreintes facturées au coût + frais de gestion. Communiqué à l'avance.</div>
+    </div>
+    <div class="extra-item">
+      <div class="extra-label">TVA</div>
+      <div class="extra-value">21% BE</div>
+      <div class="extra-note">Tous les prix sur cette page sont hors TVA belge (21%).</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="cta-text">
+    <h2>Pas Sûr de Ce Dont<br>Vous Avez <span>Besoin ?</span></h2>
+    <p>Décrivez-nous votre site, structure ou objectif et nous établirons un devis précis et sans engagement — généralement sous 1–2 jours ouvrables.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="/contact.html" class="btn-primary">Demander un Devis</a>
+    <a href="/fr/#services" class="btn-secondary">Voir nos Services</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Black Owl Technologies · Opérateur Drone Certifié EASA · Belgique</p>
+  <p>info@blackowltechnologies.com · +32 472 51 15 98</p>
+</footer>
+
+</body>
+</html>
