@@ -501,6 +501,28 @@
     --black: #F5F0E8; --black-2: #EDE8DF; --black-3: #E0D9CE;
     --white: #1C1A16; --muted: #6a6a5a; --border: rgba(212,170,60,0.28);
   }
+
+  html[data-theme="light"] .page-hero-bg {
+    background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(212,170,60,0.1) 0%, transparent 70%), #F5F0E8;
+  }
+  html[data-theme="light"] .page-hero-grid {
+    background-image:
+      linear-gradient(rgba(212,170,60,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,170,60,0.07) 1px, transparent 1px);
+  }
+  html[data-theme="light"] .notice-bar {
+    background: rgba(212,170,60,0.08);
+  }
+  html[data-theme="light"] .cta-section {
+    background: var(--black-2);
+  }
+  html[data-theme="light"] .tier,
+  html[data-theme="light"] .extra-item {
+    background: var(--black-2);
+  }
+  html[data-theme="light"] .tier.featured {
+    background: var(--black-3);
+  }
   html[data-theme="light"] nav { background: rgba(245,240,232,0.95) !important; }
   html[data-theme="light"] .nav-cta,
   html[data-theme="light"] .btn-primary { color: #1C1A16 !important; }
@@ -512,6 +534,54 @@
     transition: border-color 0.2s, background 0.2s; padding: 0; line-height: 1; flex-shrink: 0; color: var(--white);
   }
   .theme-toggle:hover { border-color: var(--amber); }
+
+  /* QUOTE VS DELIVERY BLOCK */
+  .qd-block {
+    margin: 2rem 3rem 0;
+    padding: 1.2rem 1.8rem;
+    border: 0.5px solid var(--border);
+    border-left: 2px solid var(--amber);
+    background: rgba(212,170,60,0.03);
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .qd-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    white-space: nowrap;
+    padding-top: 0.1rem;
+    flex-shrink: 0;
+  }
+  .qd-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 2rem;
+    margin: 0; padding: 0;
+  }
+  .qd-list li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .qd-list li::before {
+    content: '—';
+    color: var(--amber);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    .qd-block { margin-left: 1.5rem; margin-right: 1.5rem; flex-direction: column; gap: 0.8rem; }
+  }
+
 </style>
 <script>(function(){document.documentElement.setAttribute("data-theme",localStorage.getItem("bot-theme")||"light");})();</script>
 </head>
@@ -547,6 +617,16 @@
   <p><strong>Scope drives cost.</strong> Restricted airspace permits, BVLOS operations, rough terrain, multi-day deployments, and urgent turnarounds all affect the final price. Use the figures below as a guide — then <a href="/contact.html" style="color: var(--amber); text-decoration: none;">request a tailored quote</a>.</p>
 </div>
 
+<!-- QUOTE VS DELIVERY -->
+<div class="qd-block">
+  <div class="qd-title">Fast Quote, Controlled Delivery</div>
+  <ul class="qd-list">
+    <li>Proposal within 24–48h after reviewing your brief</li>
+    <li>Deliverables within 3–5 business days depending on the mission</li>
+    <li>Accelerated timelines available for urgent requests</li>
+  </ul>
+</div>
+
 <!-- PRICING CONTENT -->
 <section class="pricing-section">
 
@@ -575,7 +655,7 @@
         <div class="tier-badge">Most Popular</div>
         <div class="tier-name">Extended</div>
         <div class="tier-from-label">From</div>
-        <div class="tier-price"><span class="currency">€</span>950<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>1,100<span class="suffix">+</span></div>
         <div class="tier-vat">excl. VAT · per half-day</div>
         <ul class="tier-includes">
           <li>Multiple angles / locations</li>
@@ -602,14 +682,14 @@
   <div class="service-block" id="drone-inspections">
     <div class="service-header">
       <h2 class="service-name">Drone Inspections</h2>
-      <span class="service-from">From €350 excl. VAT</span>
+      <span class="service-from">From €550 excl. VAT</span>
     </div>
     <p class="service-desc">Visual inspection of roofs, facades, towers, bridges, and industrial structures. Safer and faster than scaffolding — with a full photo report and professional documentation.</p>
     <div class="tiers">
       <div class="tier">
         <div class="tier-name">Standard</div>
         <div class="tier-from-label">From</div>
-        <div class="tier-price"><span class="currency">€</span>350<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>550<span class="suffix">+</span></div>
         <div class="tier-vat">excl. VAT · per site</div>
         <ul class="tier-includes">
           <li>Visual inspection + photos</li>
@@ -622,7 +702,7 @@
         <div class="tier-badge">Most Popular</div>
         <div class="tier-name">Detailed</div>
         <div class="tier-from-label">From</div>
-        <div class="tier-price"><span class="currency">€</span>700<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>850<span class="suffix">+</span></div>
         <div class="tier-vat">excl. VAT · per site</div>
         <ul class="tier-includes">
           <li>High-resolution annotated report</li>
@@ -649,14 +729,14 @@
   <div class="service-block" id="thermal-inspections">
     <div class="service-header">
       <h2 class="service-name">Thermal Inspections</h2>
-      <span class="service-from">From €450 excl. VAT</span>
+      <span class="service-from">From €550 excl. VAT</span>
     </div>
     <p class="service-desc">Radiometric thermal imaging for heat loss detection, solar panel efficiency, electrical hotspots, and moisture intrusion. Actionable reports with thermal overlays.</p>
     <div class="tiers">
       <div class="tier">
         <div class="tier-name">Residential</div>
         <div class="tier-from-label">From</div>
-        <div class="tier-price"><span class="currency">€</span>450<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>550<span class="suffix">+</span></div>
         <div class="tier-vat">excl. VAT · per property</div>
         <ul class="tier-includes">
           <li>Building envelope heat loss</li>
@@ -669,7 +749,7 @@
         <div class="tier-badge">Most Requested</div>
         <div class="tier-name">Commercial</div>
         <div class="tier-from-label">From</div>
-        <div class="tier-price"><span class="currency">€</span>950<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>1,100<span class="suffix">+</span></div>
         <div class="tier-vat">excl. VAT · per site</div>
         <ul class="tier-includes">
           <li>Full building facade + roof</li>
@@ -696,7 +776,7 @@
   <div class="service-block" id="3d-mapping">
     <div class="service-header">
       <h2 class="service-name">3D Mapping &amp; Surveying</h2>
-      <span class="service-from">From €600 excl. VAT</span>
+      <span class="service-from">From €750 excl. VAT</span>
 
     </div>
     <p class="service-desc">Photogrammetric 3D models, orthomosaics, and digital elevation models. Used in construction, architecture, land management, and planning applications.</p>
@@ -704,7 +784,7 @@
       <div class="tier">
         <div class="tier-name">Small Site</div>
         <div class="tier-from-label">From</div>
-        <div class="tier-price"><span class="currency">€</span>600<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>750<span class="suffix">+</span></div>
         <div class="tier-vat">excl. VAT · up to 1 ha</div>
         <ul class="tier-includes">
           <li>3D model + orthomosaic</li>

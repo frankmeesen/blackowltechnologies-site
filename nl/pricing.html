@@ -107,6 +107,28 @@
     --black: #F5F0E8; --black-2: #EDE8DF; --black-3: #E0D9CE;
     --white: #1C1A16; --muted: #6a6a5a; --border: rgba(212,170,60,0.28);
   }
+
+  html[data-theme="light"] .page-hero-bg {
+    background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(212,170,60,0.1) 0%, transparent 70%), #F5F0E8;
+  }
+  html[data-theme="light"] .page-hero-grid {
+    background-image:
+      linear-gradient(rgba(212,170,60,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,170,60,0.07) 1px, transparent 1px);
+  }
+  html[data-theme="light"] .notice-bar {
+    background: rgba(212,170,60,0.08);
+  }
+  html[data-theme="light"] .cta-section {
+    background: var(--black-2);
+  }
+  html[data-theme="light"] .tier,
+  html[data-theme="light"] .extra-item {
+    background: var(--black-2);
+  }
+  html[data-theme="light"] .tier.featured {
+    background: var(--black-3);
+  }
   html[data-theme="light"] nav { background: rgba(245,240,232,0.95) !important; }
   html[data-theme="light"] .nav-cta,
   html[data-theme="light"] .btn-primary { color: #1C1A16 !important; }
@@ -118,6 +140,54 @@
     transition: border-color 0.2s, background 0.2s; padding: 0; line-height: 1; flex-shrink: 0; color: var(--white);
   }
   .theme-toggle:hover { border-color: var(--amber); }
+
+  /* QUOTE VS DELIVERY BLOCK */
+  .qd-block {
+    margin: 2rem 3rem 0;
+    padding: 1.2rem 1.8rem;
+    border: 0.5px solid var(--border);
+    border-left: 2px solid var(--amber);
+    background: rgba(212,170,60,0.03);
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .qd-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    white-space: nowrap;
+    padding-top: 0.1rem;
+    flex-shrink: 0;
+  }
+  .qd-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 2rem;
+    margin: 0; padding: 0;
+  }
+  .qd-list li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .qd-list li::before {
+    content: '—';
+    color: var(--amber);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    .qd-block { margin-left: 1.5rem; margin-right: 1.5rem; flex-direction: column; gap: 0.8rem; }
+  }
+
 </style>
 <script>(function(){document.documentElement.setAttribute("data-theme",localStorage.getItem("bot-theme")||"light");})();</script>
 </head>
@@ -140,14 +210,14 @@
   <div class="page-hero-grid"></div>
   <div class="page-hero-content">
     <div class="eyebrow">Transparante Prijzen</div>
-    <h1 class="page-title">Wat Kost<br>Het <span class="accent">U?</span></h1>
+    <h1 class="page-title">Wat Zijn<br><span class="accent">De Tarieven?</span></h1>
     <p class="page-sub">Elke missie is anders. De onderstaande prijzen zijn startpunten voor standaardopdrachten — de definitieve offerte hangt af van de complexiteit van de locatie, reisafstand, vereiste vergunningen en het formaat van de oplevering. Alle prijzen zijn exclusief btw.</p>
   </div>
 </section>
 
 <div class="notice-bar">
   <div class="notice-icon">⚠</div>
-  <p><strong>De omvang bepaalt de kostprijs.</strong> Vergunningen voor beperkt luchtruim, BVLOS-operaties, moeilijk terrein, meerdaagse inzetten en urgente deadlines beïnvloeden de eindprijs. Gebruik de onderstaande bedragen als richtlijn — <a href="/contact.html" style="color: var(--amber); text-decoration: none;">vraag een offerte op maat aan</a>.</p>
+  <p><strong>De omvang van de opdracht bepaalt de prijs.</strong> Vergunningen voor beperkt luchtruim, BVLOS-operaties, moeilijk terrein, meerdaagse inzetten en urgente deadlines beïnvloeden de eindprijs. Gebruik de onderstaande bedragen als richtlijn — <a href="/contact.html" style="color: var(--amber); text-decoration: none;">vraag een offerte op maat aan</a>.</p>
 </div>
 
 <section class="pricing-section">
@@ -158,7 +228,7 @@
       <span class="service-from">Vanaf €500 excl. btw</span>
     </div>
     <p class="service-desc">Foto's met hoge resolutie en cinematografische video voor vastgoed, bouw, evenementen en marketing. Geleverd als bewerkte bestanden of ruwe opnames afhankelijk van het pakket.</p>
-    <p class="service-licence">Prijzen dekken de opname en een standaard eenmalige licentie voor web &amp; intern gebruik. <span>Commercieel hergebruik</span> — reclame, betaalde campagnes, uitzending of productmarketing — vereist een aparte gebruikslicentie, geoffreerd op basis van medium en distributiebereik.</p>
+    <p class="service-licence">De prijs omvat de vlucht en beeldcaptatie, inclusief een standaard gebruikslicentie voor intern en webgebruik. <span>Commercieel hergebruik</span> — reclame, betaalde campagnes, uitzending of productmarketing — vereist een aparte gebruikslicentie, geoffreerd op basis van medium en distributiebereik.</p>
     <div class="tiers">
       <div class="tier">
         <div class="tier-name">Standaard</div>
@@ -176,7 +246,7 @@
         <div class="tier-badge">Meest Gevraagd</div>
         <div class="tier-name">Uitgebreid</div>
         <div class="tier-from-label">Vanaf</div>
-        <div class="tier-price"><span class="currency">€</span>950<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>1,100<span class="suffix">+</span></div>
         <div class="tier-vat">excl. btw · per halve dag</div>
         <ul class="tier-includes">
           <li>Meerdere hoeken / locaties</li>
@@ -202,18 +272,18 @@
   <div class="service-block" id="drone-inspections">
     <div class="service-header">
       <h2 class="service-name">Drone-inspecties</h2>
-      <span class="service-from">Vanaf €350 excl. btw</span>
+      <span class="service-from">Vanaf €550 excl. btw</span>
     </div>
     <p class="service-desc">Visuele inspectie van daken, gevels, masten, bruggen en industriële constructies. Veiliger en sneller dan steigers — met een volledig fotorapport en professionele documentatie.</p>
     <div class="tiers">
       <div class="tier">
         <div class="tier-name">Standaard</div>
         <div class="tier-from-label">Vanaf</div>
-        <div class="tier-price"><span class="currency">€</span>350<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>550<span class="suffix">+</span></div>
         <div class="tier-vat">excl. btw · per locatie</div>
         <ul class="tier-includes">
           <li>Visuele inspectie + foto's</li>
-          <li>Basisrapport toestand</li>
+          <li>Basisrapport met bevindingen</li>
           <li>Geschikt voor residentieel / klein commercieel</li>
           <li>Oplevering binnen 3–5 werkdagen</li>
         </ul>
@@ -222,11 +292,11 @@
         <div class="tier-badge">Meest Populair</div>
         <div class="tier-name">Gedetailleerd</div>
         <div class="tier-from-label">Vanaf</div>
-        <div class="tier-price"><span class="currency">€</span>700<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>850<span class="suffix">+</span></div>
         <div class="tier-vat">excl. btw · per locatie</div>
         <ul class="tier-includes">
           <li>Geannoteerd rapport hoge resolutie</li>
-          <li>Defectkartering met GPS-tags</li>
+          <li>Lokalisatie van defecten met GPS-tags</li>
           <li>Urgente oplevering beschikbaar (toeslag)</li>
           <li>Geschikt voor commercieel / industrieel</li>
         </ul>
@@ -248,17 +318,17 @@
   <div class="service-block" id="thermal-inspections">
     <div class="service-header">
       <h2 class="service-name">Thermische Inspecties</h2>
-      <span class="service-from">Vanaf €450 excl. btw</span>
+      <span class="service-from">Vanaf €550 excl. btw</span>
     </div>
     <p class="service-desc">Radiometrische thermografie voor warmteverliesdetectie, efficiëntie van zonnepanelen, elektrische hotspots en vochtinfiltratie. Bruikbare rapporten met thermische overlays.</p>
     <div class="tiers">
       <div class="tier">
         <div class="tier-name">Residentieel</div>
         <div class="tier-from-label">Vanaf</div>
-        <div class="tier-price"><span class="currency">€</span>450<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>550<span class="suffix">+</span></div>
         <div class="tier-vat">excl. btw · per woning</div>
         <ul class="tier-includes">
-          <li>Warmteverlies gebouwschil</li>
+          <li>Warmteverlies van de gebouwschil</li>
           <li>Zonnepanelen (tot 30 panelen)</li>
           <li>Thermisch + visueel rapport</li>
           <li>Oplevering binnen 3–5 werkdagen</li>
@@ -268,7 +338,7 @@
         <div class="tier-badge">Meest Gevraagd</div>
         <div class="tier-name">Commercieel</div>
         <div class="tier-from-label">Vanaf</div>
-        <div class="tier-price"><span class="currency">€</span>950<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>1,100<span class="suffix">+</span></div>
         <div class="tier-vat">excl. btw · per locatie</div>
         <ul class="tier-includes">
           <li>Volledige gevel + dak</li>
@@ -294,14 +364,14 @@
   <div class="service-block" id="3d-mapping">
     <div class="service-header">
       <h2 class="service-name">3D-kartering &amp; Landmeting</h2>
-      <span class="service-from">Vanaf €600 excl. btw</span>
+      <span class="service-from">Vanaf €750 excl. btw</span>
     </div>
     <p class="service-desc">Fotogrammetrische 3D-modellen, orthomozaïeken en digitale hoogtemodellen. Gebruikt in bouw, architectuur, grondbeheer en ruimtelijke ordeningstoepassingen.</p>
     <div class="tiers">
       <div class="tier">
         <div class="tier-name">Klein Terrein</div>
         <div class="tier-from-label">Vanaf</div>
-        <div class="tier-price"><span class="currency">€</span>600<span class="suffix">+</span></div>
+        <div class="tier-price"><span class="currency">€</span>750<span class="suffix">+</span></div>
         <div class="tier-vat">excl. btw · tot 1 ha</div>
         <ul class="tier-includes">
           <li>3D-model + orthomozaïek</li>
@@ -351,7 +421,7 @@
         <div class="tier-vat">excl. btw · klein perceel</div>
         <ul class="tier-includes">
           <li>RGB + NDVI vegetatiekaart</li>
-          <li>Rapport kroonbedekking</li>
+          <li>Analyse van kroonbedekking</li>
           <li>Tot ~5 ha</li>
           <li>Geleverd als GeoTIFF / PDF</li>
         </ul>
