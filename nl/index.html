@@ -766,6 +766,7 @@
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
+    .nav-cta { display: none; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .nav-links.open {
@@ -1227,7 +1228,8 @@
     }
     .faq-answer.open { max-height: 300px; padding-bottom: 24px; }
     .faq-answer p { font-size: 1rem; color: var(--muted); line-height: 1.8; max-width: 760px; }
-    @media (max-width: 900px) { .faq-section { padding: 64px 24px; } }
+    @media (max-width: 900px) {
+    .nav-cta { display: none; } .faq-section { padding: 64px 24px; } }
   </style>
   <div class="section-label">FAQ</div>
   <h2 class="section-title">Veelgestelde Vragen</h2>
