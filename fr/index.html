@@ -766,6 +766,8 @@
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
+    .logo-img, .logo-img-dark, .logo-img-light { height: 26px !important; width: 26px !important; }
+    .logo-text { font-size: 0.95rem !important; }
     .nav-cta { display: none; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
@@ -896,14 +898,14 @@
     <li><a href="/fr/pricing.html">Tarifs</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Demander un Devis</button>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <select class="lang-select" onchange="window.location=this.value">
     <option value="https://www.blackowltechnologies.com/">EN</option>
     <option value="https://www.blackowltechnologies.com/fr/" selected>FR</option>
     <option value="https://www.blackowltechnologies.com/nl/">NL</option>
   </select>
-  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
   <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle day/night mode">🌙</button>
 </nav>
 
@@ -1230,7 +1232,9 @@
     .faq-answer.open { max-height: 300px; padding-bottom: 24px; }
     .faq-answer p { font-size: 1rem; color: var(--muted); line-height: 1.8; max-width: 760px; }
     @media (max-width: 900px) {
-    .nav-cta { display: none; } .faq-section { padding: 64px 24px; } }
+    .nav-cta { display: none; }
+    .logo-img, .logo-img-dark, .logo-img-light { height: 26px !important; width: 26px !important; }
+    .logo-text { font-size: 0.95rem !important; } .faq-section { padding: 64px 24px; } }
   </style>
   <div class="section-label">FAQ</div>
   <h2 class="section-title">Questions Fréquentes</h2>
