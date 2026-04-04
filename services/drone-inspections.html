@@ -259,31 +259,6 @@
   html[data-theme="light"] .logo-img-light { display:block !important; }
   html[data-theme="light"] .logo-img { background:none !important; border-radius:0 !important; padding:0 !important; }
 
-  /* Hamburger button */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
-    z-index: 200;
-  }
-  .hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--amber);
-    border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
 </style>
 <script>
 (function(){document.documentElement.setAttribute('data-theme',localStorage.getItem('bot-theme')||'light');})();
@@ -474,3 +449,29 @@ function toggleTheme(){var h=document.documentElement;var n=h.getAttribute('data
 </script>
 </body>
 </html>
+/* Hamburger button */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--amber);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  
